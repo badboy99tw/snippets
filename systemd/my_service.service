@@ -1,0 +1,19 @@
+[Unit]
+
+Description=My Service
+
+[Service]
+
+ExecStart=/path/to/code/.venv/bin/python /path/to/code/service.py
+
+Environment=PATH=/path/to/code/.venv/bin:$PATH
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/path/to/code
+
+Restart=on-failure
+
+Type=simple
+
+[Install]
+
+WantedBy=default.target
